@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sonora | Music Player</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <div class="brand">
+            <span class="brand-icon">♫</span>
+            <span>sonora</span>
+        </div>
+
+        <div class="nav-section">
+            <p class="section-label">MENU</p>
+            <button class="nav-item active" id="homeBtn">
+                <span>⌂</span> Home
+            </button>
+            <button class="nav-item" id="searchBtn">
+                <span>⌕</span> Search
+            </button>
+            <button class="nav-item" id="libraryBtn">
+                <span>▤</span> Your Library
+            </button>
+        </div>
+
+        
+<div class="nav-section playlists">
+    <p class="section-label">YOUR PLAYLISTS</p>
+
+    <button class="playlist-link" id="sidebarLiked">
+        ♡ Liked Songs
+    </button>
+
+    <button class="playlist-link" id="sidebarPlaylist">
+        ♫ My Playlist
+    </button>
+
+    <button class="playlist-link" id="sidebarRecent">
+        ◷ Recently Played
+    </button>
+</div>
+
+
+        <div class="sidebar-bottom">
+            <div class="profile">
+                <div class="avatar">M</div>
+                <div>
+                    <strong>Music Lover</strong>
+                    <small>Free Account</small>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+        <header class="topbar">
+            <div class="navigation-arrows">
+                <button class="circle-btn" id="backBtn">‹</button>
+                <button class="circle-btn" id="forwardBtn">›</button>
+            </div>
+
+            <div class="search-box" id="searchBox">
+                <span>⌕</span>
+                <input type="text" id="searchInput"
+                       placeholder="What do you want to listen to?">
+            </div>
+
+            <div class="top-profile">M</div>
+        </header>
+
+        <section class="welcome">
+            <p class="eyebrow">YOUR PERSONAL MUSIC SPACE</p>
+            <h1>Good music.<br><span>Good mood.</span></h1>
+            <p class="welcome-description">
+                Your sound, your space. Discover and enjoy your favourites.
+            </p>
+        </section>
+
+        <!-- QUICK ACCESS -->
+        <section class="quick-section">
+            <div class="section-heading">
+                <h2>Made for you</h2>
+                <span class="muted">YOUR COLLECTION</span>
+            </div>
+
+            <div class="quick-cards">
+                <div class="quick-card" id="likedCard">
+                    <div class="quick-art liked-art">♥</div>
+                    <div>
+                        <strong>Liked Songs</strong>
+                        <small>Your favourite tracks</small>
+                    </div>
+                </div>
+
+                <div class="quick-card" id="allSongsCard">
+                    <div class="quick-art all-art">♫</div>
+                    <div>
+                        <strong>All Songs</strong>
+                        <small>Your music library</small>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SONG LIST -->
+        <section class="tracks-section" id="tracksSection">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">YOUR LIBRARY</p>
+                    <h2 id="listHeading">Recently Added</h2>
+                </div>
+                <span class="muted" id="songCount">0 TRACKS</span>
+            </div>
+
+            <div class="track-header">
+                <span>#</span>
+                <span>TITLE</span>
+                <span>ALBUM</span>
+                <span>TIME</span>
+                <span></span>
+            </div>
+
+            <div id="trackList" class="track-list">
+                <!-- Songs rendered by JavaScript -->
+            </div>
+
+            <div class="empty-state" id="emptyState">
+                <span>♫</span>
+                <h3>No songs found</h3>
+                <p>Add your music files to the library to get started.</p>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <span>SONORA</span>
+            <span>MADE FOR THE LOVE OF MUSIC ♡</span>
+        </footer>
+
+    </main>
+
+    <!-- PLAYER BAR -->
+    <footer class="player-bar">
+
+        <div class="now-playing">
+            <div class="now-art" id="nowArt">♫</div>
+            <div class="now-info">
+                <strong id="nowTitle">Choose a song</strong>
+                <small id="nowArtist">Your music awaits</small>
+            </div>
+            <button class="like-btn" id="likeBtn">♡</button>
+        </div>
+
+        <div class="player-controls">
+
+            <div class="control-buttons">
+                <button class="control-btn" id="shuffleBtn" title="Shuffle">⤨</button>
+                <button class="control-btn" id="prevBtn" title="Previous">◀|</button>
+                <button class="play-btn" id="playBtn" title="Play">▶</button>
+                <button class="control-btn" id="nextBtn" title="Next">|▶</button>
+                <button class="control-btn" id="repeatBtn" title="Repeat">↻</button>
+            </div>
+
+            <div class="progress-container">
+                <span id="currentTime">0:00</span>
+                <input type="range" id="progressBar"
+                       min="0" max="100" value="0">
+                <span id="duration">0:00</span>
+            </div>
+
+        </div>
+
+        <div class="extra-controls">
+            <span>♫</span>
+            <input type="range" id="volumeBar"
+                   min="0" max="1" step="0.01" value="0.7">
+        </div>
+
+    </footer>
+
+</div>
+
+<audio id="audioPlayer"></audio>
+
+<script src="script.js"></script>
+</body>
+</html>
